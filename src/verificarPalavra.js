@@ -5,13 +5,29 @@
 // Implemente a função verificarPalavra, que receba uma frase, e uma palavra de busca e:
 
 // - Retorna `"A frase é muito curta"` se o comprimento da frase for menor que 5;
-// - Retorna `"A frase contém a palavra de busca"` se a `palavraBusca` estiver contida dentro de frase (ignorando maiúsculas e minúsculas);
+// - Retorna `"A frase contém a palavra de busca"` se a `palavraBusca`
+// estiver contida dentro de frase (ignorando maiúsculas e minúsculas);
 // - Retorna `"A frase não contém a palavra de busca"` caso contrário;
 // - Remove espaços extras no início e no final da frase antes de realizar a verificação.
 
 function verificarPalavra(frase, palavraBusca) {
-  // TODO: implementar função
+    // TODO: implementar função
+
+    frase = frase.toLowerCase().trim();
+    palavraBusca = palavraBusca.toLowerCase().trim();
+
+    console.log(frase.length);
+
+    if (frase.length < 5) return "A frase é muito curta";
+
+    if (frase.includes(palavraBusca)) {
+        return "A frase contém a palavra de busca";
+    } else {
+        return "A frase não contém a palavra de busca";
+    }
 }
+
+verificarPalavra("abc", "a");
 
 //NÃO REMOVA O CÓDIGO ABAIXO
 module.exports = { verificarPalavra };

@@ -10,9 +10,27 @@
 // - Executar a operação correta e retornar o resultado;
 
 function calcular(num1, num2, operador) {
-  // TODO: implementar função
-}
+    // TODO: implementar função
+    num1 = parseFloat(num1);
+    num2 = parseFloat(num2);
 
+    if (isNaN(num1) || isNaN(num2)) return "Erro: parâmetros inválidos";
+
+    switch (operador) {
+        case "+":
+            return num1 + num2;
+        case "-":
+            return num1 - num2;
+        case "*":
+            return num1 * num2;
+        case "/":
+            if (num2 === 0) return "Erro: divisão por zero";
+            return num1 / num2;
+
+        default:
+            return "Erro: operação inválida";
+    }
+}
 
 //NÃO REMOVA O CÓDIGO ABAIXO
 module.exports = { calcular };
